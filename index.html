@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>ABDULLAH AL NOMAN - CYBER SENTINEL BANGLADESH</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* ======================================= */
+        /* ১. CSS ভ্যারিয়েবল            */
+        /* ======================================= */
+        :root {
+            --bg-color: #1a1a2e;        /* গাঢ় নীল/ধূসর ব্যাকগ্রাউন্ড */
+            --card-bg: #2a2a4a;         /* কার্ডের ব্যাকগ্রাউন্ড */
+            --text-color: #e0e0e0;      /* হালকা সাদা লেখা */
+            --accent-color: #00ffff;    /* উজ্জ্বল সায়ান (নীল) */
+            --link-color: #33ccff;      /* হালকা নীল (লিঙ্কের জন্য) */
+            --gradient-start: #00ffff;  /* গ্রেডিয়েন্টের শুরু (সায়ান) */
+            --gradient-end: #4a00e0;    /* গ্রেডিয়েন্টের শেষ (পার্পল-ব্লু) */
+            --header-gradient-start: #00c6ff; /* হেডারের জন্য উজ্জ্বল নীল */
+            --header-gradient-end: #0072ff;   /* হেডারের জন্য গাঢ় নীল */
+        }
+
+        /* ======================================= */
+        /* ২. গ্লোবাল এবং রিসেট          */
+        /* ======================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif; 
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; 
+            min-height: 100vh; 
+        }
+
+        .container {
+            max-width: 600px; 
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* ======================================= */
+        /* ৩. প্রোফাইল হেডার             */
+        /* ======================================= */
+        .profile-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            margin-bottom: 20px;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .profile-pic:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            background: linear-gradient(90deg, var(--header-gradient-start), var(--header-gradient-end)); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.8rem;
+            margin-bottom: 5px;
+            font-weight: 700; 
+        }
+
+        .tagline {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .team-name {
+            color: var(--text-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+            border: 1px solid var(--accent-color);
+            padding: 5px 15px;
+            border-radius: 25px;
+            display: inline-block; 
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+        }
+        
+        /* ======================================= */
+        /* ৪. সাধারণ কার্ড স্টাইল         */
+        /* ======================================= */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 15px; 
+            margin-bottom: 25px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 255, 255, 0.1); 
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            justify-content: center; 
+        }
+
+        .card-header i {
+            font-size: 1.8rem;
+            margin-right: 15px;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .card-header h2 {
+            font-size: 1.6rem;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            padding: 0;
+            border-bottom: none;
+        }
+
+        /* ======================================= */
+        /* ৫. ব্যক্তিগত তথ্য (পার্সোনাল ইনফো)     */
+        /* ======================================= */
+        .personal-info-item {
+            background-color: var(--bg-color); 
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex; 
+            align-items: center;
+            text-align: left;
+        }
+
+        .personal-info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .personal-info-item i {
+            font-size: 1.5rem; 
+            color: var(--accent-color); 
+            margin-right: 15px; 
+            flex-shrink: 0; 
+        }
+        
+        .personal-info-item strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 3px;
+        }
+
+        .personal-info-item span {
+            font-size: 0.95rem;
+            color: #b0b0d0; 
+        }
+
+        /* ======================================= */
+        /* ৬. স্কিল ট্যাগ / শখ (বাটন স্টাইল)      */
+        /* ======================================= */
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+            justify-content: center; 
+        }
+
+        .skill-tag {
+            background: linear-gradient(45deg, var(--header-gradient-start), var(--header-gradient-end)); 
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .skill-tag i {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+
+        /* ======================================= */
+        /* ৭. যোগাযোগের তথ্য (সোশ্যাল মিডিয়া লিস্ট) */
+        /* ======================================= */
+        .contact-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0; 
+        }
+
+        .contact-list li {
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            text-align: center; 
+            color: var(--text-color);
+        }
+        .contact-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-list li i {
+            font-size: 1.4rem; 
+            color: var(--accent-color); 
+            display: block; 
+            margin: 0 auto 5px; 
+        }
+
+        .contact-list li a {
+            color: var(--link-color); 
+            text-decoration: none;
+            transition: color 0.2s ease;
+            display: block; 
+            font-size: 1rem;
+        }
+
+        .contact-list li a:hover {
+            color: var(--text-color);
+        }
+        
+        .contact-list li span {
+            color: var(--link-color); 
+            font-size: 1rem;
+            display: block; 
+        }
+
+        /* ======================================= */
+        /* ৮. সোশ্যাল লিঙ্ক বাটন সেকশন            */
+        /* ======================================= */
+        .social-links-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-button {
+            background: linear-gradient(45deg, var(--header-gradient-start), var(--header-gradient-end));
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .social-button i {
+            margin-right: 8px;
+        }
+
+        .social-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); 
+        }
+        
+        /* ======================================= */
+        /* ৯. কল টু অ্যাকশন (Help Button)        */
+        /* ======================================= */
+        .help-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .help-button i {
+            margin-right: 8px;
+        }
+
+        .help-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ======================================= */
+        /* ১০. ডিসক্লেইমার বক্স                  */
+        /* ======================================= */
+        .disclaimer-inner-box {
+            background-color: var(--bg-color); 
+            border: 1px dashed var(--accent-color); 
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center; 
+            margin: 0 auto; 
+            max-width: 90%; 
+        }
+        
+        .disclaimer-inner-box p {
+            color: #b0b0d0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .disclaimer-inner-box p i {
+            color: #ff4d4d; 
+            margin-right: 5px;
+        }
+
+        /* ======================================= */
+        /* ১১. ফুটার                           */
+        /* ======================================= */
+        footer {
+            text-align: center;
+            color: var(--accent-color); 
+            margin-top: 40px;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="profile-header">
+            <img src="https://l.top4top.io/p_3598d1rvv4.jpg" alt="প্রোফাইল ছবি" class="profile-pic">
+            <h1>ABDULLAH AL NOMAN</h1>
+            <p class="tagline">ওয়েব ডেভেলপার | সাইবার সিকিউরিটি</p>
+            <span class="team-name">CYBER SENTINEL BANGLADESH</span>
+        </header>
+
+        <section class="card">
+            <div class="card-header">
+                <i class="fas fa-user-shield"></i>
+                <h2>Personal Information</h2>
+            </div>
+            
+            <div class="personal-info-item">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                    <strong>TEAM CSB</strong>
+                    <span>Cyber Sentinel Bangladesh & CSB Cyber Security Agency</span>
+                </div>
+            </div>
+            
+            <div class="personal-info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <strong>Location</strong>
+                    <span>Bangladesh 🇧🇩</span>
+                </div>
+            </div>
+
+            <div class="personal-info-item">
+                <i class="fas fa-birthday-cake"></i>
+                <div>
+                    <strong>Birth</strong>
+                    <span>01 March</span>
+                </div>
+            </div>
+
+            <div class="personal-info-item">
+                <i class="fas fa-tint"></i>
+                <div>
+                    <strong>Blood Group</strong>
+                    <span>AB+</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-header">
+                <i class="fas fa-code"></i>
+                <h2>What I Do</h2>
+            </div>
+            <div class="skill-tags">
+                <span class="skill-tag"><i class="fas fa-shield-alt"></i> Cyber Security Specialist</span>
+                <span class="skill-tag"><i class="fas fa-laptop-code"></i> Web & App Developer</span>
+                <span class="skill-tag"><i class="fas fa-robot"></i> Telegram Bot Maker</span>
+                <span class="skill-tag"><i class="fas fa-user-secret"></i> Ethical Hacker (Grey Hat)</span>
+                <span class="skill-tag"><i class="fas fa-search"></i> Digital Investigator</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-header">
+                <i class="fas fa-heart"></i>
+                <h2>Hobbies</h2>
+            </div>
+            <div class="skill-tags">
+                <span class="skill-tag"><i class="fas fa-mobile-alt"></i> Coding</span>
+                <span class="skill-tag"><i class="fas fa-gamepad"></i> Gaming</span>
+                <span class="skill-tag"><i class="fas fa-brain"></i> Research</span>
+                <span class="skill-tag"><i class="fas fa-flask"></i> Tech Exploration</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-header">
+                <i class="fas fa-headset"></i> 
+                <h2>Contact & Help</h2>
+            </div>
+            <ul class="contact-list">
+                <li>
+                    <i class="fab fa-telegram-plane"></i> 
+                    <span>@noman_khan_1</span>
+                </li>
+                <li>
+                    <i class="fas fa-envelope-open-text"></i>
+                    <a href="mailto:game18shop@gmail.com">game18shop@gmail.com</a>
+                </li>
+                <li>
+                    <i class="fab fa-telegram-plane"></i>
+                    <a href="https://t.me/cybersentinelbangladesh" target="_blank">@cybersentinelbangladesh</a>
+                </li>
+            </ul>
+            
+            <a href="https://t.me/csb_supportbot" class="help-button" target="_blank">
+                <i class="fas fa-question-circle"></i> Help Support
+            </a>
+        </section>
+
+        <section class="card">
+            <div class="card-header">
+                <i class="fas fa-share-alt"></i>
+                <h2>Social Links</h2>
+            </div>
+            <div class="social-links-container">
+                <a href="https://www.facebook.com/Abdullahalnoman.CSB" class="social-button" target="_blank">
+                    <i class="fab fa-facebook-f"></i> Facebook ID
+                </a>
+                <a href="https://www.facebook.com/CyberSentinelBangladesh" class="social-button" target="_blank">
+                    <i class="fab fa-facebook-square"></i> Facebook Page
+                </a>
+                <a href="https://facebook.com/groups/cybersentinelbangladeshcsb/" class="social-button" target="_blank">
+                    <i class="fas fa-users"></i> Facebook Group
+                </a>
+            </div>
+        </section>
+
+        <section class="card disclaimer">
+            <div class="card-header"> 
+                <i class="fas fa-exclamation-triangle"></i>
+                <h2>Disclaimer</h2>
+            </div>
+            <div class="disclaimer-inner-box">
+                <p>I operate for educational and ethical purposes only.</p>
+                <p><i class="fas fa-times-circle"></i> Illegal activities are not supported.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>❤ Thanks for visiting my Bio! ❤</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
